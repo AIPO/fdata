@@ -11,7 +11,7 @@ import {HttpClient} from '@angular/common/http';
 export class AppComponent implements OnInit {
     title = 'App for reading API';
     private apiUrl = 'https://api.chucknorris.io/jokes/random';
-    data: any = null;
+    quote: string[];
 
     constructor(private  http: HttpClient) {
     }
@@ -19,8 +19,8 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         return this.http.get(this.apiUrl)
             .subscribe(data => {
-            this.data = data;
-            console.log(this.data);
+            this.quote = data['value'];
+            console.log(this.quote);
         });
     }
 }
