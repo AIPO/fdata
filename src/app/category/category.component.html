@@ -1,3 +1,9 @@
-<p>
-  category works!
-</p>
+<div class="field">
+    <div class="control">
+        <div class="select">
+            <select (change)="onChange($event)">
+                <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+            </select>
+        </div>
+    </div>
+</div>

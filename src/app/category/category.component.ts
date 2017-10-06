@@ -7,8 +7,8 @@ import {HttpClient} from '@angular/common/http';
     styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
-    private apiUrl = 'https://api.chucknorris.io/jokes/random';
-    data: any;
+    private apiUrl = 'https://api.chucknorris.io/jokes/categories';
+    categories: any;
 
     constructor(private  http: HttpClient) {
     }
@@ -16,8 +16,13 @@ export class CategoryComponent implements OnInit {
     ngOnInit() {
         return this.http.get(this.apiUrl)
             .subscribe(data => {
-                this.data = data;
+                this.categories = data;
             });
 
+    }
+
+    public onChange(event): void {  // event will give you full breif of action
+        //   const newVal = event.target.value;
+        console.log(event.target.value);
     }
 }

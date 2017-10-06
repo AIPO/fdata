@@ -4,7 +4,7 @@ import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
-import { CategoryComponent } from './category/category.component';
+import {CategoryComponent} from './category/category.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +17,7 @@ import { CategoryComponent } from './category/category.component';
         HttpClientModule
     ],
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent, CategoryComponent]
 })
 export class AppModule {
 }
