@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div class="title is-1 has-text-centered">
     <h1>
         Welcome to {{title}}!
     </h1>
@@ -10,7 +10,9 @@
             <img src="{{quote.icon_url}}" alt="">
         </figure>
         <div>
+            <div class="content">
+                {{quote.value}}
+            </div>
         </div>
-        <p>{{quote|json}}</p>
     </div>
-
+</div>

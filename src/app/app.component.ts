@@ -13,8 +13,7 @@ export class AppComponent implements OnInit {
     private apiUrl = 'https://api.chucknorris.io/jokes/random';
     quote: any;
 
-    constructor(private  http: HttpClient) {
-    }
+    constructor(private  http: HttpClient) {}
 
     ngOnInit() {
         return this.http.get(this.apiUrl)
