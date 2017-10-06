@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import set = Reflect.set;
 
 @Component({
     selector: 'app-category',
@@ -7,8 +8,9 @@ import {HttpClient} from '@angular/common/http';
     styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
-    private apiUrl = 'https://api.chucknorris.io/jokes/categories';
+    private apiUrl = 'https://api.chucknorris.io/jokes/random?categories';
     categories: any;
+    newUrl: any;
 
     constructor(private  http: HttpClient) {
     }
@@ -21,8 +23,7 @@ export class CategoryComponent implements OnInit {
 
     }
 
-    public onChange(event): void {  // event will give you full breif of action
-        //   const newVal = event.target.value;
-        console.log(event.target.value);
+    public onChange(event): void {
+            this.newUrl = 'https://api.chucknorris.io/jokes/random?category=' + event.target.value;
     }
 }
